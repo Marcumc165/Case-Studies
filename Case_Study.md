@@ -1,5 +1,4 @@
-# Google Data Analytics Capstone Project
-### Case study: How does a bike-share navigate speedy success?
+# Case study: How does a bike-share navigate speedy success?
 
 # 1. Introduction
  This Case Study is to demonstrate the skills I learned in the Google Data Analytics Course. In this program, I learned how to clean and organize
@@ -242,8 +241,7 @@ WHERE tripduration_mins <= 0 OR tripduration_mins >= 1441
 ## **Step Four: Analyze**  
 
 In this phase of the analysis process, I will begin to analyze the relatonships in the data across the columns, identify trends, and extract datasets
-that help me understand the the different habits between casual riders and member riders. These are some of the queries that I ran to extract 
-datasets that I end up inserting into Tableu to create the visuals I will use in the Share step.
+that help me understand the the different habits between casual riders and member riders. These are some of the queries that I ran to analyze the data.
 
 To begin with, I ran this query is to extract the membership status, and total rides for each ride type.
 ```
@@ -320,6 +318,11 @@ ORDER BY rides_total DESC
 ```
 
 ## **Step Five: Share**  
+
+Now that I have analyzed key data points and identified trends, I am now able to exract the data points that I need from the dataset and input 
+them into tableau to create visualizations. After I create the vizualizations, I can then present the findings to the shareholders.
+
+First I will examine and 
 
 <img width="671" height="258" alt="Image" src="https://github.com/user-attachments/assets/3fc0b08d-add0-483e-ac6e-79f857399314" />  
 
