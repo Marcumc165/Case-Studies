@@ -319,8 +319,21 @@ GROUP BY
 ORDER BY rides_total DESC
 ```
 
-## **Step Five: Share**
+## **Step Five: Share**  
 
+<img width="671" height="258" alt="Image" src="https://github.com/user-attachments/assets/3fc0b08d-add0-483e-ac6e-79f857399314" />  
+
+text
+  
+<img width="1920" height="1010" alt="Image" src="https://github.com/user-attachments/assets/3cf257d0-e36e-4d0a-8263-34c785d3cf97" />  
+
+text
+
+<img width="1920" height="1013" alt="Image" src="https://github.com/user-attachments/assets/5270651f-c2e1-4549-bbf8-2d14d4fe95f3" />  
+
+text  
+
+<img width="1917" height="913" alt="Image" src="https://github.com/user-attachments/assets/9fc1c79b-b686-4eb4-859f-0d98e33004ed" />  
 
 ------
 ## **Step Six: Act**
