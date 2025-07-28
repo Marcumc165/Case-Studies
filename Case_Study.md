@@ -1,4 +1,4 @@
-# Case study: How does a bike-share navigate speedy success?
+# Case study: How does a bike-share navigate speedy success?  
 
 # 1. Introduction
  This Case Study is to demonstrate the skills I learned in the Google Data Analytics Course. In this program, I learned how to clean and organize
@@ -322,22 +322,72 @@ ORDER BY rides_total DESC
 Now that I have analyzed key data points and identified trends, I am now able to exract the data points that I need from the dataset and input 
 them into tableau to create visualizations. After I create the vizualizations, I can then present the findings to the shareholders.
 
-First I will examine and 
+First I will examine the types of bikes that each group uses.
 
 <img width="671" height="258" alt="Image" src="https://github.com/user-attachments/assets/3fc0b08d-add0-483e-ac6e-79f857399314" />  
 
-text
-  
+Member users make up about 64% of total of total rides and casual users make up the remaining 36% of total rides. Electric bikes are the most 
+popular ride type, making up a total of 50% of total rides. However, electric scooters were only introduced in September so it us unknown if 
+scooters would have a larger effect on total ride share during the spring and summer months. Members make up 64% of both classic bikes and 
+electric bikes, showing that member and don't have a preference for either classic bikes or electric bikes. However, casual members do have a 
+preference towards electric scooters, as they make up 59% of all scooter users.  
+
+Following this, I will analyze how the different user types use the bikes over different amount of time parameters.
+
 <img width="1920" height="1010" alt="Image" src="https://github.com/user-attachments/assets/3cf257d0-e36e-4d0a-8263-34c785d3cf97" />  
 
-text
+For monthly trips, both member and casual exhibit similar trends. Both rise in total rides in the spring and sumer months, peaking in 
+September, and fall in the fall and winter months, with a low in January. During weekly trips, member rides tend to take more rides during the 
+week, and casual riders have peaks on the weekends. Trips per hour is where you find the most difference. Member users have two peak times 
+at 8AM and 5PM, while casual users have a steady growth throughout the day, peaking at 5PM, then slowing down into the evening.  
+
+From these findings, we can conclude that member users may be using the bikes to make their daily commutes, as their peak rides are during 
+the work week and at work hours. We can also conclude that casual users are more like to use the bikes for leisure, as their peak times are on 
+the weekends and are more steady throughout the day.  
+
+Now that we understand the differences between members and casual users total trips, I'll compare the average trip durations.
 
 <img width="1920" height="1013" alt="Image" src="https://github.com/user-attachments/assets/5270651f-c2e1-4549-bbf8-2d14d4fe95f3" />  
 
-text  
+One ofthe first things you notice is that casual users have a much higher average trip duration. Members users have about the same trip 
+duration throughout the different time parameters, where casual users have highly varying times. Casual users have a higher trip duration 
+during the spring and summer months as well as the weekends. Casual users also have a peak in ride duration from 10AM till 1PM. 
+
+We can conclude that casual riders take trips that are about twice as long as member riders, while taking fewer trips. These trips are also taken
+on the weekends and are mainly not during commuting hours, which supports our previous observation that casual users trips are primarily for leisure.  
+
+Lastly I will look at the difference in the most popular starting and ending locations for member and casual users by looking at some of the 
+most popular locations.
 
 <img width="1917" height="913" alt="Image" src="https://github.com/user-attachments/assets/9fc1c79b-b686-4eb4-859f-0d98e33004ed" />  
 
-------
-## **Step Six: Act**
+Both member and casual riders tend to start and end in the same locations, however the locations that the different groups go to are very 
+different. Member users are more likely to go to locations that are near to locations like grocery stores, banks, factories, train stations, 
+commercial areas , and the University of Chicago. Casual users are more likely to go to locations like museums, aquariums, parks, and beaches.
+These observations continue to support the conclusion that casual riders utilize the bike share network for leisure purpouses and members use 
+it for commuting.
 
+### Summary ###  
+
+*Member Users*  
+
+Member users are more likely to use the bikes to commute throughout the city. The peak times that members use the bikes is during the week 
+and at peak commute times. They take shorter trip times, on average taking half as long of trips. Members also go to locations such as grocery 
+stores, banks, factories, train stations, commercial areas , and the University of Chicago. This indicates that members tend to use the bikes as
+part of their daily commute.  
+
+*Casual Riders*  
+
+Casual riders throughout the data has shown that they use the bikes for leisure, peaking on the weekends and in the summer months. They are 
+also willing to travel farther than member users, on average traveling twice as far as members. This is also supported by looking at where casual 
+users tend to travel to. Casual users are most likely to go to locations like museums, aquariums, parks, beaches and other leisurely locations.  
+
+## **Step Six: Act**  
+
+Now that we have observed the differences between casual and member users, we can help create marketing stratagies that will encourage 
+casual users to convert into members. Here are some of the following recomendations that could be made:
+
+1. A marketing campaign could be launched in the spring and summer months thats targeted at tourist and casual rider hotspot.
+2. Create new weekend and seasonal membership plans to target the influx of casual riders on the weekends and warmer seasons.
+3. Provide discount for longer trips or electric scooters to incentivize casual rides that take longer trips or perfer scooters.
+4. Introduce a referral program that incentivizes members to refer friends and family to become members.
