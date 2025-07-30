@@ -1,4 +1,4 @@
-# Case study: How does a bike-share navigate speedy success?  
+# How does a bike-share navigate speedy success?  
 
 # 1. Introduction
  This Case Study is to demonstrate the skills I learned in the Google Data Analytics Course. In this program, I learned how to clean and organize
@@ -9,7 +9,9 @@ In this Case Study, I will comlepete an analysis for a ficticious bike-share pro
 SQL to clean, organize, analyze, and calulate my findings. I will aslo be using Tableu to create diagrams to share my findings and present my
 complete analysis.
 
-# 2. Scenario
+# 2. Scenario  
+
+<img width="1400" height="1244" alt="Image" src="https://github.com/user-attachments/assets/e923ddd3-0326-448b-87e9-c8a2e3204c75" />  
 
 I am a junior data analyst working on the marketing analyst team at Cyclistic, a bike-share
 company in Chicago. The director of marketing believes the company’s future success
