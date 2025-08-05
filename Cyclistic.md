@@ -3,10 +3,10 @@
 # 1. Introduction
  This Case Study is to demonstrate the skills I learned in the Google Data Analytics Course. In this program, I learned how to clean and organize
  data for analysis, and complete analysis and calculations using spreadsheets, SQL and R programming. I also learned how to visualize and 
- present data findings in dashboards, and in presentations using Tableu.
+ present data findings in dashboards, and in presentations using Tableau.
 
-In this Case Study, I will comlepete an analysis for a ficticious bike-share program named Cyclistic along with some key team members, using 
-SQL to clean, organize, analyze, and calulate my findings. I will aslo be using Tableu to create diagrams to share my findings and present my
+In this Case Study, I will complete an analysis for a fictitious bike-share program named Cyclistic along with some key team members, using 
+SQL to clean, organize, analyze, and calculate my findings. I will also be using Tableau to create diagrams to share my findings and present my
 complete analysis.
 
 # 2. Scenario  
@@ -16,7 +16,7 @@ complete analysis.
 I am a junior data analyst working on the marketing analyst team at Cyclistic, a bike-share
 company in Chicago. The director of marketing believes the company’s future success
 depends on maximizing the number of annual memberships. Therefore, the team wants to
-understand how casual riders and annual members use Cyclistic bikes dierently. From these
+understand how casual riders and annual members use Cyclistic bikes differently. From these
 insights, the team will design a new marketing strategy to convert casual riders into annual
 members. But first, Cyclistic executives must approve our recommendations, so they must be
 backed up with compelling data insights and professional data visualizations.
@@ -81,7 +81,7 @@ Those steps are as follows:
 
 ## **Step One: Ask**
 The Cyclistic Marketing Analytics Team came up with three questions that will guide the future marketing program:
-1. How do annual members and casual riders use Cyclistic bikes dierently?
+1. How do annual members and casual riders use Cyclistic bikes differently?
 2. Why would casual riders buy Cyclistic annual memberships?
 3. How can Cyclistic use digital media to influence casual riders to become members?
 
@@ -90,11 +90,11 @@ riders use Cyclistic bikes differently?
 
 ## **Step Two: Prepare**
 **Data Source**   
-Because Cyclistic is a fictitional company, I will be using the January 2024 - December 2024 data from [The City of Chicago’s Divvy bicycle sharing service](https://divvy-tripdata.s3.amazonaws.com/index.html)
+Because Cyclistic is a fictional company, I will be using the January 2024 - December 2024 data from [The City of Chicago’s Divvy bicycle sharing service](https://divvy-tripdata.s3.amazonaws.com/index.html)
 to analyze and identify current trends in riders behavior. The data has been made available by Motivate International Inc. under this [license](https://divvybikes.com/data-license-agreement).
 
 **Data Organization**  
-The data is organized by month, and follows the naming covention of *"YYYYMM-divvy-tripdata"*. The datasets for January - May contains the 
+The data is organized by month, and follows the naming convention of *"YYYYMM-divvy-tripdata"*. The datasets for January - May contains the 
 trips that started in their respective months, and the datasets for June - December contain the trips that were concluded in their months. Each 
 dataset contains the following data column names:   
 * ride_id
@@ -112,7 +112,7 @@ dataset contains the following data column names:
 * member_casual
 
 **ROCCC**  
-ROCCC is an acronym that is used to help determine weither a dataset is biased. It stands for  
+ROCCC is an acronym that is used to help determine whether a dataset is biased. It stands for  
 
 R- Reliable  
 O- Original  
@@ -164,7 +164,7 @@ FROM `cyclistic-466120.combined_2024_tripdata.combined_2024_tripdata`
 ```
 
 **Data Cleaning**  
-Before we can clean the data I will make a duplicate table named "cleaned_2024_tripdata" so in case I make any irreversable errors, I have a data set that I can return 
+Before we can clean the data I will make a duplicate table named "cleaned_2024_tripdata" so in case I make any irreversible errors, I have a data set that I can return 
 to. Now we must ensure that the data is clean, concistant, and does not contain any errors. First I will check the metadata to see if there are any 
 inconsistencies.  
 
@@ -199,9 +199,9 @@ WHERE ride_id IN (
     GROUP BY ride_id
     HAVING COUNT(*) > 1)
 ```
-Now I will look for null values using the following code. It appears ther are 1,073,905 nulls in the start_station_name and start_station_id
-columns, 1,104,493 nulls in the end_statioon_name and end_station_id columns, and 7,152 null values for end_lat and end_lng. Although the data 
-is null, I will not be removing from the database because it can still provide useful data, and they aren't in a key field.
+Now I will look for null values using the following code. It appears there are 1,073,905 nulls in the start_station_name and start_station_id
+columns, 1,104,493 nulls in the end_station_name and end_station_id columns, and 7,152 null values for end_lat and end_lng. Although the data 
+is null, I will not be removing it from the database because it can still provide useful data, and they aren't in a key field.
 ```
 SELECT COUNT(*) - COUNT(ride_id) ride_id,
  COUNT(*) - COUNT(rideable_type) rideable_type,
@@ -218,7 +218,7 @@ SELECT COUNT(*) - COUNT(ride_id) ride_id,
  COUNT(*) - COUNT(member_casual) member_casual
 FROM cyclistic-466120.combined_2024_tripdata.cleaned_2024_tripdata
 ```
-Next I will calculate some data points that I will use during my analysis. I will use the following code to calulate the hour, the day of the week, 
+Next I will calculate some data points that I will use during my analysis. I will use the following code to calculate the hour, the day of the week, 
 and the month the trip started, and the trip duration in minutes.
 
 ```
@@ -229,11 +229,9 @@ SELECT *,
   format_date('%B', started_at) AS month,
   format_date('%Y', started_at) AS year,
 FROM cyclistic-466120.combined_2024_tripdata.cleaned_2024_tripdata
-
-
 ```
 I noticed that there are some trips that are shorter than one minute and some are longer than one day, which can affect the average trip 
-durations for all the rides. I will delete all of these rows than create a new table called "final_2024_tripdata".
+durations for all the rides. I will delete all of these rows then create a new table called "final_2024_tripdata".
 ```
 DELETE
 FROM cyclistic-466120.combined_2024_tripdata.v2_cleaned_2024_tripdata
@@ -242,10 +240,10 @@ WHERE tripduration_mins <= 0 OR tripduration_mins >= 1441
 
 ## **Step Four: Analyze**  
 
-In this phase of the analysis process, I will begin to analyze the relatonships in the data across the columns, identify trends, and extract datasets
-that help me understand the the different habits between casual riders and member riders. These are some of the queries that I ran to analyze the data.
+In this phase of the analysis process, I will begin to analyze the relationships in the data across the columns, identify trends, and extract datasets
+that helps me understand the different habits between casual riders and member riders. These are some of the queries that I ran to analyze the data.
 
-To begin with, I ran this query is to extract the membership status, and total rides for each ride type.
+To begin with, I ran this query to extract the membership status, and total rides for each ride type.
 ```
 SELECT
   member_casual,
@@ -257,7 +255,7 @@ GROUP BY
   member_casual
 ORDER BY member_casual
 ```  
-Following this, I ran this query is to find the membership status, ride total, and the average trip duration for each month.
+Following this, I ran this query to find the membership status, ride total, and the average trip duration for each month.
 ```
 SELECT
   month,
@@ -270,7 +268,7 @@ GROUP BY
   month
 ORDER BY rides_total DESC
 ```  
-Next I ran this query is to find the membership status, ride total, and the average trip duration for each day of the week.
+Next I ran this query to find the membership status, ride total, and the average trip duration for each day of the week.
 ```
 SELECT
   day_of_week,
@@ -321,24 +319,24 @@ ORDER BY rides_total DESC
 
 ## **Step Five: Share**  
 
-Now that I have analyzed key data points and identified trends, I am now able to exract the data points that I need from the dataset and input 
-them into tableau to create visualizations. After I create the vizualizations, I can then present the findings to the shareholders.
+Now that I have analyzed key data points and identified trends, I am now able to extract the data points that I need from the dataset and input 
+them into tableau to create visualizations. After I create the visualizations, I can then present the findings to the shareholders.
 
 First I will examine the types of bikes that each group uses.
 
 <img width="671" height="258" alt="Image" src="https://github.com/user-attachments/assets/3fc0b08d-add0-483e-ac6e-79f857399314" />  
 
-Member users make up about 64% of total of total rides and casual users make up the remaining 36% of total rides. Electric bikes are the most 
-popular ride type, making up a total of 50% of total rides. However, electric scooters were only introduced in September so it us unknown if 
+Member users make up about 64% of total rides and casual users make up the remaining 36% of total rides. Electric bikes are the most 
+popular ride type, making up a total of 50% of total rides. However, electric scooters were only introduced in September so it is unknown if 
 scooters would have a larger effect on total ride share during the spring and summer months. Members make up 64% of both classic bikes and 
-electric bikes, showing that member and don't have a preference for either classic bikes or electric bikes. However, casual members do have a 
+electric bikes, showing that members don't have a preference for either classic bikes or electric bikes. However, casual members do have a 
 preference towards electric scooters, as they make up 59% of all scooter users.  
 
-Following this, I will analyze how the different user types use the bikes over different amount of time parameters.
+Following this, I will analyze how the different user types use the bikes over different amounts of time parameters.
 
 <img width="1920" height="1010" alt="Image" src="https://github.com/user-attachments/assets/3cf257d0-e36e-4d0a-8263-34c785d3cf97" />  
 
-For monthly trips, both member and casual exhibit similar trends. Both rise in total rides in the spring and sumer months, peaking in 
+For monthly trips, both member and casual exhibit similar trends. Both rise in total rides in the spring and summer months, peaking in 
 September, and fall in the fall and winter months, with a low in January. During weekly trips, member rides tend to take more rides during the 
 week, and casual riders have peaks on the weekends. Trips per hour is where you find the most difference. Member users have two peak times 
 at 8AM and 5PM, while casual users have a steady growth throughout the day, peaking at 5PM, then slowing down into the evening.  
@@ -351,12 +349,12 @@ Now that we understand the differences between members and casual users total tr
 
 <img width="1920" height="1013" alt="Image" src="https://github.com/user-attachments/assets/5270651f-c2e1-4549-bbf8-2d14d4fe95f3" />  
 
-One ofthe first things you notice is that casual users have a much higher average trip duration. Members users have about the same trip 
+One of the first things you notice is that casual users have a much higher average trip duration. Members users have about the same trip 
 duration throughout the different time parameters, where casual users have highly varying times. Casual users have a higher trip duration 
 during the spring and summer months as well as the weekends. Casual users also have a peak in ride duration from 10AM till 1PM. 
 
 We can conclude that casual riders take trips that are about twice as long as member riders, while taking fewer trips. These trips are also taken
-on the weekends and are mainly not during commuting hours, which supports our previous observation that casual users trips are primarily for leisure.  
+on the weekends and are mainly not during commuting hours, which supports our previous observation that casual users' trips are primarily for leisure.  
 
 Lastly I will look at the difference in the most popular starting and ending locations for member and casual users by looking at some of the 
 most popular locations.
@@ -366,7 +364,7 @@ most popular locations.
 Both member and casual riders tend to start and end in the same locations, however the locations that the different groups go to are very 
 different. Member users are more likely to go to locations that are near to locations like grocery stores, banks, factories, train stations, 
 commercial areas , and the University of Chicago. Casual users are more likely to go to locations like museums, aquariums, parks, and beaches.
-These observations continue to support the conclusion that casual riders utilize the bike share network for leisure purpouses and members use 
+These observations continue to support the conclusion that casual riders utilize the bike share network for leisure purposes and members use 
 it for commuting.
 
 ### Summary ###  
@@ -380,16 +378,16 @@ part of their daily commute.
 
 *Casual Riders*  
 
-Casual riders throughout the data has shown that they use the bikes for leisure, peaking on the weekends and in the summer months. They are 
+Casual riders throughout the data have shown that they use the bikes for leisure, peaking on the weekends and in the summer months. They are 
 also willing to travel farther than member users, on average traveling twice as far as members. This is also supported by looking at where casual 
 users tend to travel to. Casual users are most likely to go to locations like museums, aquariums, parks, beaches and other leisurely locations.  
 
 ## **Step Six: Act**  
 
-Now that we have observed the differences between casual and member users, we can help create marketing stratagies that will encourage 
-casual users to convert into members. Here are some of the following recomendations that could be made:
+Now that we have observed the differences between casual and member users, we can help create marketing strategies that will encourage 
+casual users convert into members. Here are some of the following recommendations that could be made:
 
-1. A marketing campaign could be launched in the spring and summer months thats targeted at tourist and casual rider hotspot.
+1. A marketing campaign could be launched in the spring and summer months that's targeted at tourist and casual rider hotspots.
 2. Create new weekend and seasonal membership plans to target the influx of casual riders on the weekends and warmer seasons.
-3. Provide discount for longer trips or electric scooters to incentivize casual rides that take longer trips or perfer scooters.
+3. Provide discounts for longer trips or electric scooters to incentivize casual rides that take longer trips or prefer scooters.
 4. Introduce a referral program that incentivizes members to refer friends and family to become members.
